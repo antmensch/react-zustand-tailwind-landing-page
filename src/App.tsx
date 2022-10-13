@@ -104,8 +104,13 @@ function App() {
         </div>
       </div>
       {searchState === "open" ? (
-        <div className="absolute h-screen w-full bg-black bg-opacity-50 flex justify-center pt-40 top-0 left-0">
-          <div className="relative ">
+        <div
+          className="absolute h-screen w-full bg-black bg-opacity-50 flex justify-center pt-40 top-0 left-0"
+          onClick={(e) => {
+            closeSearch();
+          }}
+        >
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
             <input
               type="text"
               className="md:w-80 bg-slate-900 dark:bg-night-cyan dark:text-main-black rounded-lg text-white text-opacity-60 h-12 pl-10 pr-14 text-sm focus:outline-none"
